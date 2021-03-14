@@ -11,15 +11,20 @@ const Ticker = ({ ticker }) => {
       </View>
       <View style={styles.cell}>
         <Text>
-          VOL {formatNumber(parseInt(String(ticker[7] * ticker[6])))} BTC
+          VOL
+          {formatNumber(
+            parseInt(String(Number(ticker[7]) * Number(ticker[6])))
+          )}
+          BTC
         </Text>
         <Text>
-          {ticker[4]} ({parseFloat(String(ticker[5] * 100)).toFixed(2)} %)
+          {ticker[4]} ({parseFloat(String(Number(ticker[5]) * 100)).toFixed(2)}
+          %)
         </Text>
       </View>
       <View style={styles.cell}>
-        <Text>LOW {formatNumber(ticker[9])}</Text>
-        <Text>HIGH {formatNumber(ticker[8])}</Text>
+        <Text>LOW {formatNumber(Number(ticker[9]))}</Text>
+        <Text>HIGH {formatNumber(Number(ticker[8]))}</Text>
       </View>
     </View>
   );
